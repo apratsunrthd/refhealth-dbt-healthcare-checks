@@ -21,10 +21,7 @@ with invalid_icd10 as (
             length(trim(cast({{ column_name }} as {{ dbt.type_string() }}))) < 3
             or length(trim(cast({{ column_name }} as {{ dbt.type_string() }}))) > 8
             -- Must match ICD-10 alphanumeric pattern
-            or not regexp_like(
-                upper(trim(cast({{ column_name }} as {{ dbt.type_string() }}))),
-                '^[A-Z][0-9][A-Z0-9](\\.[A-Z0-9]{1,4})?$|^[A-Z][0-9][A-Z0-9]{1,5}$'
-            )
+            or not {{ refhealth_dbt_healthcare_checks.regexp_match("upper(trim(cast(" ~ column_name ~ " as " ~ dbt.type_string() ~ ")))", "^[A-Z][0-9][A-Z0-9](\\.[A-Z0-9]{1,4})?$|^[A-Z][0-9][A-Z0-9]{1,5}$") }}
         )
 )
 
