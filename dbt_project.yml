@@ -10,3 +10,4 @@ target-path: "target"
 clean-targets:
   - "target"
   - "dbt_packages"
+

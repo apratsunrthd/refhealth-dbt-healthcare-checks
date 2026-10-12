@@ -6,6 +6,7 @@
 - Formatted `dbt_project.yml` and generic macro test signatures.
 - Published comprehensive `README.md` with installation and schema examples.
 - Documented system architecture and handoff procedures.
+- Cross-linked with Healthcare Data AI Operating System (HDAIOS) v1.0 specification and Interactive Self-Assessment Tool.
 
 ## For Codex or Claude
 
@@ -16,3 +17,4 @@
 
 - Publish release tag `v1.0.0` on GitHub.
 - Submit package to dbt Hub or share on LinkedIn company page.
+

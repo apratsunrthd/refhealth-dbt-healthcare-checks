@@ -43,3 +43,4 @@ select *
 from orphaned_claims
 
 {% endtest %}
+

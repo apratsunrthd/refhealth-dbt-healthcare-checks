@@ -9,3 +9,4 @@ Key files:
 - `macros/` — test macros returning failing rows per dbt generic test standards.
 - `README.md` — public documentation and usage examples.
 - `LICENSE` — MIT License.
+

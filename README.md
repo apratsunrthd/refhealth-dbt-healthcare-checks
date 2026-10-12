@@ -121,7 +121,9 @@ models:
 ## Architectural Context
 
 Read the full technical analysis on why claims lag breaks naive AI agents and how bitemporal data modeling works in practice:
-* [Bitemporal Healthcare Data, dbt Testing Standards, and the LLM Trap](https://refhealth.consulting/blog-bitemporal-healthcare-data-ai)
+* [Healthcare Data AI Operating System (HDAIOS) Specification](https://refhealth.consulting/hdaios.html) — The canonical 5-layer architectural standard.
+* [Interactive HDAIOS Self-Assessment Tool](https://refhealth.consulting/hdaios.html#assessment) — Free, zero-PHI architecture audit tool for healthcare engineering teams.
+* [Bitemporal Healthcare Data, dbt Testing Standards, and the LLM Trap](https://refhealth.consulting/blog-bitemporal-healthcare-data-ai) — Deep dive into clearinghouse lag, timestamp semantics, and SCD Type 2 modeling.
 * [Why We Build Healthcare Data Stacks with dbt](https://refhealth.consulting/blog-why-we-build-with-dbt)
 * [Healthcare AI Readiness Diagnostic](https://refhealth.consulting/ai-readiness-assessment)
 
@@ -130,3 +132,4 @@ Read the full technical analysis on why claims lag breaks naive AI agents and ho
 ## License
 
 MIT © [ref(health) Consulting](https://refhealth.consulting)
+

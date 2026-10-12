@@ -32,3 +32,4 @@ select *
 from invalid_icd10
 
 {% endtest %}
+
