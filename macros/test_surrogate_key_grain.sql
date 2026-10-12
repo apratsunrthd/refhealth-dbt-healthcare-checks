@@ -15,15 +15,14 @@ with grain_counts as (
         {% endfor %},
         count(*) as row_count
     from {{ model }}
-    where
-        {% for col in grain_columns %}
-        {{ col }} is null{% if not loop.last %} or {% endif %}
-        {% endfor %}
     group by
         {% for col in grain_columns %}
         {{ col }}{% if not loop.last %}, {% endif %}
         {% endfor %}
     having count(*) > 1
+        {% for col in grain_columns %}
+        or {{ col }} is null
+        {% endfor %}
 )
 
 select *
