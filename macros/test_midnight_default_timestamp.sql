@@ -40,3 +40,4 @@ where midnight_ratio > {{ max_midnight_ratio }}
   and total_records >= 10
 
 {% endtest %}
+
