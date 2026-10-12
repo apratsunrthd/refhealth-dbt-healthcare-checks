@@ -20,7 +20,7 @@ with invalid_npis as (
             -- Must be exactly 10 characters
             length(trim(cast({{ column_name }} as {{ dbt.type_string() }}))) != 10
             -- Must contain only numeric digits
-            or not regexp_like(trim(cast({{ column_name }} as {{ dbt.type_string() }})), '^[0-9]{10}$')
+            or not {{ refhealth_dbt_healthcare_checks.regexp_match("trim(cast(" ~ column_name ~ " as " ~ dbt.type_string() ~ "))", "^[0-9]{10}$") }}
             -- Standard CMS individual/org NPIs begin with 1 or 2
             or not substring(trim(cast({{ column_name }} as {{ dbt.type_string() }})), 1, 1) in ('1', '2')
         )

@@ -22,10 +22,7 @@ with invalid_procedure_codes as (
             -- Exactly 5 characters
             length(trim(cast({{ column_name }} as {{ dbt.type_string() }}))) != 5
             -- Must match CPT or HCPCS regex pattern
-            or not regexp_like(
-                upper(trim(cast({{ column_name }} as {{ dbt.type_string() }}))),
-                '^[0-9]{5}$|^[A-Z][0-9]{4}$|^[0-9]{4}[A-Z]$'
-            )
+            or not {{ refhealth_dbt_healthcare_checks.regexp_match("upper(trim(cast(" ~ column_name ~ " as " ~ dbt.type_string() ~ ")))", "^[0-9]{5}$|^[A-Z][0-9]{4}$|^[0-9]{4}[A-Z]$") }}
         )
 )
 
